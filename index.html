@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grain — Clarity that compounds</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            grain: {
+              50: "#f4fffb",
+              100: "#def7ee",
+              200: "#c9efe2",
+              500: "#0f766e",
+              600: "#0d5f59",
+            }
+          },
+          boxShadow: {
+            "hero": "0 30px 80px rgba(15, 23, 42, 0.08)",
+            "dash": "0 24px 50px rgba(15, 23, 42, 0.06)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes floaty {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-[#edf1f4] text-slate-900 antialiased">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-[#edf1f4]/80 backdrop-blur border-b border-white/40">
+    <div class="max-w-6xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-semibold text-sm">G</div>
+        <span class="font-semibold tracking-tight">grain</span>
+        <span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] border border-emerald-100 hidden sm:inline">Canada-first</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+        <button onclick="scrollToId('product')" class="hover:text-slate-900 transition">Product</button>
+        <button onclick="scrollToId('how')" class="hover:text-slate-900 transition">How it works</button>
+        <button onclick="scrollToId('why')" class="hover:text-slate-900 transition">Why Grain</button>
+        <button onclick="scrollToId('waitlist')" class="hover:text-slate-900 transition">Waitlist</button>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button onclick="scrollToId('waitlist')" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition">
+          Join waitlist
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#edf1f4] to-[#f7fafc]">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="h-72 bg-[radial-gradient(circle_at_top,_rgba(15,118,110,0.07),_transparent_55%)]"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-14 relative z-10 text-center">
+      <p class="text-xs font-semibold tracking-[.3em] uppercase text-emerald-600">CLARITY THAT COMPOUNDS</p>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-semibold leading-tight tracking-tight text-slate-900">
+        Intelligence for your money, momentum for your life.
+      </h1>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+        Grain brings clarity to every account, habit, and goal — turning scattered finances into a clear path forward that helps you grow automatically.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 justify-center">
+        <button onclick="scrollToId('waitlist')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition shadow-md shadow-slate-950/10">
+          Join the waitlist
+          <span aria-hidden="true">→</span>
+        </button>
+        <button onclick="scrollToId('product')" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/50 text-slate-900 text-sm font-medium border border-white hover:bg-white transition">
+          See the product
+        </button>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">Private by default • Works with multiple banks • No manual spreadsheets</p>
+    </div>
+  </section>
+
+
+<!-- PRODUCT / DASHBOARD PREVIEW (simplified) -->
+  <section id="product" class="-mt-8 mb-16 relative z-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-dash border border-slate-100 overflow-hidden">
+        <!-- app top bar -->
+        <div class="flex items-center justify-between px-6 py-4 bg-slate-50/70 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+            <p class="text-xs text-slate-500">Grain · sample view</p>
+          </div>
+          <p class="text-xs text-slate-400">Last updated just now</p>
+        </div>
+
+        <!-- layout -->
+        <div class="grid lg:grid-cols-[1.08fr_0.6fr] gap-6 p-6 md:p-8">
+          <!-- LEFT SIDE -->
+          <div class="space-y-5">
+            <!-- greeting -->
+            <div>
+              <p class="text-xs text-slate-400 mb-1">Overview</p>
+              <h2 class="text-base md:text-lg font-semibold text-slate-900">Here’s what Grain built from your accounts.</h2>
+              <p class="text-xs text-slate-400">No manual entry — just connect and review.</p>
+            </div>
+
+            <!-- 3 METRICS -->
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="rounded-2xl bg-slate-50 p-4">
+                <p class="text-[10px] uppercase text-slate-400 mb-1">Money in this month</p>
+                <p class="text-2xl font-semibold tracking-tight">$4,100</p>
+                <p class="text-[11px] text-slate-400 mt-1">From payroll + cards</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-4">
+                <p class="text-[10px] uppercase text-slate-400 mb-1">Left to spend</p>
+                <p class="text-2xl font-semibold tracking-tight">$1,230</p>
+                <p class="text-[11px] text-emerald-600 mt-1">On track</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-4">
+                <p class="text-[10px] uppercase text-slate-400 mb-1">Going to goals</p>
+                <p class="text-2xl font-semibold tracking-tight">$950</p>
+                <p class="text-[11px] text-slate-400 mt-1">Condo · emergency</p>
+              </div>
+            </div>
+
+            <!-- WHERE YOUR MONEY IS GOING -->
+            <div class="rounded-2xl bg-slate-50 p-4 md:p-5 border border-slate-100">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="text-xs text-slate-400">Where your money is going</p>
+                  <p class="text-sm font-medium text-slate-900">Nov 1 – 18</p>
+                </div>
+                <p class="text-xs text-emerald-600">You’re 6% under plan ✅</p>
+              </div>
+              <div class="space-y-3">
+                <!-- rent -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-xs text-slate-500">Housing</p>
+                    <p class="text-xs text-slate-500">$2,000</p>
+                  </div>
+                  <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+                    <div class="h-full w-[78%] bg-slate-900/70 rounded-full"></div>
+                  </div>
+                </div>
+                <!-- groceries -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-xs text-slate-500">Groceries</p>
+                    <p class="text-xs text-slate-500">$420</p>
+                  </div>
+                  <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+                    <div class="h-full w-[40%] bg-emerald-400 rounded-full"></div>
+                  </div>
+                </div>
+                <!-- dining -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-xs text-slate-500 flex items-center gap-1">Dining out <span class="inline-flex px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 text-[10px]">+18%</span></p>
+                    <p class="text-xs text-slate-500">$260</p>
+                  </div>
+                  <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+                    <div class="h-full w-[32%] bg-amber-300 rounded-full"></div>
+                  </div>
+                </div>
+                <!-- subs -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-xs text-slate-500 flex items-center gap-1">Subscriptions <span class="text-[9px] text-slate-400">2 flagged</span></p>
+                    <p class="text-xs text-slate-500">$55</p>
+                  </div>
+                  <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+                    <div class="h-full w-[14%] bg-slate-400 rounded-full"></div>
+                  </div>
+                </div>
+                <!-- goals -->
+                <div class="pt-2 border-t border-slate-100 mt-3">
+                  <p class="text-[11px] text-slate-400 flex items-center gap-1">
+                    Grain will move <span class="text-slate-900 font-medium">$120</span> from dining → condo fund if you confirm.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE (light, 3 blocks) -->
+          <div class="space-y-4">
+            <!-- grain noticed -->
+            <div class="rounded-2xl bg-slate-900 text-white p-4 shadow-sm">
+              <p class="text-[11px] uppercase tracking-wide text-slate-300 mb-2">Grain noticed this</p>
+              <p class="text-sm leading-relaxed">
+                Dining jumped 18% in the last 2 weeks. If we cap it at your usual $220, you can add <strong>$70</strong> to goals this month.
+              </p>
+              <div class="mt-3 flex gap-2">
+                <button class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/20 hover:bg-white/25 transition">Apply</button>
+                <button class="text-xs px-3 py-1 rounded-full border border-white/10 hover:bg-white/10 transition">See details</button>
+              </div>
+            </div>
+
+            <!-- ask grain -->
+            <div class="rounded-2xl bg-white border border-slate-100 p-4">
+              <p class="text-xs text-slate-400 mb-2">Ask Grain</p>
+              <div class="flex gap-2">
+                <input type="text" value="What if I get a $4k bonus?" class="flex-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-100 text-sm" readonly />
+                <button class="px-3 py-2 rounded-xl bg-slate-900 text-white text-xs">Send</button>
+              </div>
+              <p class="mt-3 text-[11px] text-slate-500">Grain will re-route to debt → emergency → condo.</p>
+            </div>
+
+            <!-- next actions -->
+            <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <p class="text-xs text-slate-400">Next actions</p>
+                <button class="text-[10px] text-slate-500 hover:text-slate-700">Mark all done</button>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
+                <p class="text-sm text-slate-600">Confirm Grain’s salary detection (TD · bi-weekly).</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-amber-400"></span>
+                <p class="text-sm text-slate-600">Choose which subscription to pause first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- scroll hint -->
+      <div class="flex justify-center mt-6">
+        <button onclick="scrollToId('how')" class="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-slate-600 transition">
+          Scroll to see how Grain works
+          <span aria-hidden="true">↓</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center">
+        <p class="text-xs font-semibold tracking-[.3em] uppercase text-emerald-600">how it works</p>
+        <h2 class="mt-3 text-3xl font-semibold text-slate-900">Connect → Grain learns → You grow.</h2>
+        <p class="mt-2 text-slate-500 max-w-2xl mx-auto">No spreadsheets. No setup. Just plug in your accounts — Grain studies your patterns, builds your model, and gives you clarity you can act on.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-6">
+          <div class="h-9 w-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-semibold mb-4">1</div>
+          <h3 class="font-semibold mb-2 text-slate-900">Connect your world</h3>
+          <p class="text-sm text-slate-500">Link your banks, cards, and investments once. Grain syncs automatically — no manual entry, ever.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-6">
+          <div class="h-9 w-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-semibold mb-4">2</div>
+          <h3 class="font-semibold mb-2 text-slate-900">Grain gets smarter</h3>
+          <p class="text-sm text-slate-500">It learns your habits, finds opportunities, and builds a living snapshot of where your money’s flowing — and where it could go next.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-6">
+          <div class="h-9 w-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-semibold mb-4">3</div>
+          <h3 class="font-semibold mb-2 text-slate-900">You get guidance</h3>
+          <p class="text-sm text-slate-500">Ask questions like “Can I afford to move?” or “What if I add $500 to savings?” Grain answers — and recalibrates your plan instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GRAIN -->
+  <section id="why" class="py-16 bg-[#edf1f4]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center">
+        <p class="text-xs font-semibold tracking-[.3em] uppercase text-emerald-600">why grain</p>
+        <h2 class="mt-3 text-3xl font-semibold text-slate-900">Built for how real people live and spend.</h2>
+        <p class="mt-2 text-slate-500 max-w-2xl mx-auto">Banks give you data. Grain gives you direction — turning information into momentum, so you can actually grow.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-3xl border border-slate-100 p-6 flex gap-4">
+          <div class="h-10 w-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg">🧭</div>
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-1">See the whole picture</h3>
+            <p class="text-sm text-slate-500">
+              One intelligent view that connects spending, saving, debt, and goals — no more juggling apps or statements.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-100 p-6 flex gap-4">
+          <div class="h-10 w-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg">📈</div>
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-1">Insights that evolve with you</h3>
+            <p class="text-sm text-slate-500">
+              Spot trends before they become habits. Grain notices what’s changing — and tells you what to do about it.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-100 p-6 flex gap-4">
+          <div class="h-10 w-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg">💬</div>
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-1">Always thinking ahead</h3>
+            <p class="text-sm text-slate-500">
+              Grain runs quietly in the background — rebalancing goals, surfacing opportunities, and helping you stay one step ahead.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-100 p-6 flex gap-4">
+          <div class="h-10 w-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg">🛡️</div>
+          <div>
+            <h3 class="font-semibold text-slate-900 mb-1">Your data, your control</h3>
+            <p class="text-sm text-slate-500">
+              Read-only connections. No selling, no sharing — your privacy isn’t a feature, it’s the foundation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs font-semibold tracking-[.3em] uppercase text-emerald-600">join the waitlist</p>
+      <h2 class="mt-3 text-3xl font-semibold text-slate-900">Be part of the first cohort shaping the future of personal finance.</h2>
+      <p class="mt-2 text-slate-500">We’re inviting early users who want to see their finances differently — not as chaos to manage, but as potential to unlock.</p>
+      <form onsubmit="handleWaitlist(event)" class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <input type="text" name="name" required placeholder="Your name" class="px-4 py-3 rounded-full border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-200 text-sm w-full sm:w-40" />
+        <input type="email" name="email" required placeholder="you@email.com" class="px-4 py-3 rounded-full border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-200 text-sm w-full" />
+        <button type="submit" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition w-full sm:w-auto">
+          Join waitlist
+        </button>
+      </form>
+      <p id="waitlist-msg" class="mt-3 text-sm text-emerald-600 hidden">You’re on the list ✅</p>
+      <p class="mt-4 text-xs text-slate-400">No spam. We only email when your spot opens.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-400">
+      <p>© <span id="year"></span> Grain. All rights reserved.</p>
+      <p>Clarity → Insight → Action.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleWaitlist(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      console.log("Waitlist:", { name, email });
+      document.getElementById('waitlist-msg').classList.remove('hidden');
+      form.reset();
+    }
+  </script>
+</body>
+</html>
